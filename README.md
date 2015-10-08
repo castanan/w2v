@@ -20,7 +20,7 @@ Get some tweets from chritmas eve 2014 from here:
 
 https://www.dropbox.com/sh/82rrk8di2nouf0x/AAAIMc6J9rWpu08UBLhLbHXEa?dl=0 
 
-Note: there is no need to uncompress the file, just download the tweets.gz file.  
+Note: there is no need to uncompress the file, just download the tweets.gz file and save it on the repo /YOUR-PATH-TO-REPO/w2v.  
 
 ## Edit 
 
