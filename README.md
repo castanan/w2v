@@ -14,6 +14,14 @@ git clone https://github.com/castanan/w2v.git
 
 cd /YOUR-PATH-TO-REPO/w2v 
 
+## Get the Data
+
+Get some tweets from chritmas eve 2014 from here: 
+
+https://www.dropbox.com/sh/82rrk8di2nouf0x/AAAIMc6J9rWpu08UBLhLbHXEa?dl=0 
+
+Note: there is no need to uncompress the file, just download the tweets.gz file.  
+
 ## Edit 
 
 Open tweets-to-w2v.py and replace the data path line (line 54)
