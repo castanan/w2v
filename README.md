@@ -50,6 +50,12 @@ Note: step 5 generates file myCluster.npy so you may want to check
 
 We are ready to rock!
 
+## Test you Word2Vec Matrix
+
+Execute the following command
+
+python dist-to-words.py
+
 
 ## NOTES:
 
@@ -59,4 +65,4 @@ b. A different list of keywords in filter.txt file may be useful for different a
 
 c. Larger amount of tweets (or text documents) are needed to get an accurate Word2Vec model 
 
-d. The singular values of the Word2Vec matrix may be useful to choose the number of dimensions for each of the vectors associated with your terms, #âs and @âs 
+d. The singular values of the Word2Vec matrix may be useful to choose the number of dimensions for each of the vectors associated with your terms, #'s (hashtags) and @'s (Twitter handlers) 
