@@ -1,5 +1,7 @@
 # Building a Word2Vec Model with Twitter Data
 
+## Blog: http://www.spark.tc/building-a-word2vec-model-with-twitter-data/
+
 ## First install Python, numpy and Apache Spark 
 
 I.) Installing Anaconda installs Python, numpy, among other Python packages. If interested go here https://www.continuum.io/downloads
