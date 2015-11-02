@@ -69,8 +69,15 @@ python dist-to-words.py
 
 a. All these scripts run in local mode and need to be change to cluster mode for running them with large data sets of tweets
 
-b. A different list of keywords in filter.txt file may be useful for different applications
+b. If your w2v matrix is too large, you may want to save it in hdfs 
 
-c. Larger amount of tweets (or text documents) are needed to get an accurate Word2Vec model 
+c. A different list of keywords in filter.txt file may be useful for different applications
 
-d. The singular values of the Word2Vec matrix may be useful to choose the number of dimensions for each of the vectors associated with your word terms, #'s (hashtags) and @'s (Twitter handlers) 
+d. Larger amount of tweets (or text documents) are needed to get an accurate Word2Vec model 
+
+e. The singular values of the Word2Vec matrix may be useful to choose the number of dimensions for each of the vectors associated with your word terms, #'s (hashtags) and @'s (Twitter handlers) 
+
+## FUTURE WORK:
+
+a. Use the dataframe API to improve efficiency
+
