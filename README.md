@@ -8,6 +8,20 @@ I.) Installing Anaconda installs Python, numpy, among other Python packages. If 
 
 II.) Download Apache Spark go here: http://spark.apache.org/downloads.html
 
+## Make sure that your pyspark is working
+
+I.) Go to your spark home directory
+
+cd YOUR-SPARK-HOME/bin
+
+II.) Open a pyspark shell by
+
+./pyspark
+
+III.) print your spark context by typing sc in the pyspark shell, you should get something like this:
+
+![image of pyspark shell](https://github.com/castanan/w2v/images/pyspark-shell.png)
+
 ## Get the Repo
 
 git clone https://github.com/castanan/w2v.git
