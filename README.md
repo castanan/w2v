@@ -20,7 +20,8 @@ II.) Open a pyspark shell by
 
 III.) print your spark context by typing sc in the pyspark shell, you should get something like this:
 
-![image of pyspark shell](https://github.com/castanan/w2v/images/pyspark-shell.png)
+![image of pyspark shell]
+(https://github.com/castanan/w2v/blob/master/images/pyspark-shell.png)
 
 ## Get the Repo
 
