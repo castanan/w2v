@@ -9,7 +9,8 @@
 # /YOUR-SPARK-HOME/bin/spark-submit tweets-to-w2v.py filter.txt
 
 # filter.txt contains a list of words of interest and may vary 
-# depending on the application.
+# depending on the application. In this example, filter.txt contain
+# chritmas related words: santa, claus, rudolf,...
 
 import os, sys, codecs, json
 import numpy as np
@@ -18,6 +19,8 @@ from math import sqrt
 from pyspark import SparkContext
 from pyspark.mllib.feature import Word2Vec
 
+# read the keywords to filter tweets
+# in our example, these keywords are stored in 'filter.txt'
 def readFilters(filterpath):
     filters = set()
     f = open(filterpath, 'r')
@@ -29,6 +32,7 @@ def readFilters(filterpath):
     f.close()
     return filters
 
+# parse text of each tweets in english that contains at least one keyword
 def process(filters):
     def realProcess(line):
         key = 'text'
@@ -53,7 +57,11 @@ def main(filterpath):
     
     ## spark context
     sc = SparkContext('local', 'train-w2v') #change to cluster mode when needed
-
+    # next 3 lines turn some logs off
+    logger = sc._jvm.org.apache.log4j
+    logger.LogManager.getLogger("org").setLevel( logger.Level.OFF )
+    logger.LogManager.getLogger("akka").setLevel( logger.Level.OFF )
+    
     datapath = '/Users/jorgecastanon/Documents/github/w2v/tweets.gz'
     # Replace this line with:
     # datapath = '/YOUR-PATH-TO-REPO/w2v/tweets.gz'
