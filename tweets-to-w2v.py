@@ -8,6 +8,9 @@
 # Replace this line with:
 # /YOUR-SPARK-HOME/bin/spark-submit tweets-to-w2v.py filter.txt
 
+# filter.txt contains a list of words of interest and may vary 
+# depending on the application.
+
 import os, sys, codecs, json
 import numpy as np
 from math import sqrt
@@ -78,12 +81,14 @@ def main(filterpath):
 
     ## train NN model with word2vec
     word2vec = Word2Vec()
-    model = word2vec.fit(tweets) #train model
+    model = word2vec.fit(tweets) # complexity
 
     ## Get the list of words in the w2v matrix
-    vocabsize = 10000
-    any_word = 'christmas'
-    tmp_list = model.findSynonyms(any_word, vocabsize-1) #setting my vocabulary size to at most 100K words
+    vocabsize = 10000       # max vocabulary size is at most 10K words
+    any_word = 'christmas'  # can be any word in your model
+    # the next line finds the top 'vocabsize' words to 'any_word' 
+    tmp_list = model.findSynonyms(any_word, vocabsize-1) 
+    # the newt few lines define the list of words in the model
     list_words = []
     for l in tmp_list:
         list_words.append(l[0])
@@ -98,9 +103,11 @@ def main(filterpath):
     print "Number of features per word: ", nfeatures
     print "=================================================\n"
 
-    ## Construct the feature matrix, each row is asociated to each word in list_words
+    ## Construct the feature matrix, each row vector is associated to each word in 'list_words'
     feature_matrix = [] 
     for word in list_words:
+        # model.transform : word => vectors 
+        # this function maps a word to its numerical vector
         feature_matrix.append(model.transform(word).array)
     
     ## save W2V matrix and the list of words 
