@@ -39,7 +39,7 @@ K = int(math.floor(math.sqrt(float(words.shape[0])/2))) # Number of clusters
          # where n is the number of words in the model
          # feel free to choose K with a fancier algorithm
 maxiters = 200 # may change depending on the data        
-clusters = KMeans.train(Feat, k = K, maxIterations = maxiters) 
+clusters = KMeans.train(Feat, k = K, maxIterations = maxiters, runs = 30) 
 
 print "\n================================================="
 print "Number of clusters used: ", K

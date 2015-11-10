@@ -8,7 +8,7 @@ import numpy as np
 from math import sqrt
 
 word = 'christmas' # word of interest
-nwords = 10        # number of words close to 'word' to print
+nwords = 20        # number of words close to 'word' to print
 
 # Read the Word2Vec model, the list of words and the cluster labels
 Feat = np.load('myW2Vmatrix.npy')  
@@ -23,8 +23,8 @@ nwstar = sqrt(np.dot(wstar,wstar)) # norm of vector assoicated with 'word'
 dist = np.zeros(Nw) # initialize vector of distances
 i = 0
 for w in Feat: # loop to compute cosine distances between 'word' and the rest of the words 
-    den = sqrt(np.dot(w,w))*nwstar  # compute denominator of cosine distance
-    dist[i] = np.dot(wstar,w)/den   # compute cosine distance to each word
+    den = sqrt(np.dot(w,w))*nwstar  # denominator of cosine distance
+    dist[i] = np.dot(wstar,w)/den   # cosine distance to each word
     i = i + 1
 
 indexes = np.argpartition(dist,-(nwords+1))[-(nwords+1):]

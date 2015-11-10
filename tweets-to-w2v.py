@@ -124,7 +124,7 @@ def main(filterpath):
 
     sc.stop()
     return
-    print >>sys.stderr, cnt, cnt_out, cnt_err
+    print >> sys.stderr, cnt, cnt_out, cnt_err
 
 def checkInput():
     if len(sys.argv) != 2:
