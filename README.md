@@ -2,11 +2,11 @@
 
 ## Blog: http://www.spark.tc/building-a-word2vec-model-with-twitter-data/
 
-## First install Python, numpy and Apache Spark 
+## Pre-reqs: install Python, numpy and Apache Spark 
 
 I.) Installing Anaconda installs Python, numpy, among other Python packages. If interested go here https://www.continuum.io/downloads
 
-II.) Download Apache Spark go here: http://spark.apache.org/downloads.html
+II.) Download/Install Apache Spark go here: http://spark.apache.org/downloads.html
 
 ## Make sure that your pyspark is working
 
