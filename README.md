@@ -79,6 +79,21 @@ Execute the following command
 
 python dist-to-words.py
 
+## Visualization of the Word2Vec Matrix via PCA
+
+Execute the following command
+
+~/Documents/spark-1.5.1/bin/spark-submit visualize-words.py
+
+replace with 
+
+YOUR-SPARK-HOME/bin/spark-submit visualize-words.py
+
+You should get a nice plot like this one:
+
+![image of w2v-visual-via-pca]
+(https://github.com/castanan/w2v/blob/master/images/w2v-visual-via-pca.png)
+
 
 ## NOTES:
 
