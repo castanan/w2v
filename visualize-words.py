@@ -49,7 +49,7 @@ pca = PCA(k=numComponents, inputCol="features", outputCol="pcaFeatures")
 model = pca.fit(dfFeat)
 dfComp = model.transform(dfFeat).select("pcaFeatures")
 # get the first two components to lists to be plotted
-maxWordsVis = 20
+maxWordsVis = 30
 compX = dfComp.map(lambda vec: vec[0][0]).take(maxWordsVis)
 compY = dfComp.map(lambda vec: vec[0][1]).take(maxWordsVis)
 
