@@ -8,6 +8,8 @@ I.) Installing Anaconda installs Python, numpy, among other Python packages. If 
 
 II.) Download/Install Apache Spark go here: http://spark.apache.org/downloads.html
 
+NOTE: SKIP installations I.) and II.) if you create an account (FREE!) here: https://datascientistworkbench.com/
+
 ## Make sure that your pyspark is working
 
 I.) Go to your spark home directory
