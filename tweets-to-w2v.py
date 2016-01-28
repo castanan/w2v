@@ -63,6 +63,7 @@ def main(filterpath):
     logger.LogManager.getLogger("akka").setLevel( logger.Level.OFF )
     
     datapath = '/Users/jorgecastanon/Documents/github/w2v/tweets.gz'
+    #datapath = '/Users/jorgecastanon/Desktop/bdvs497-data/decahose/decahose_BG20141223093*.gz,/Users/jorgecastanon/Desktop/bdvs497-data/decahose/decahose_BG20141223091*.gz'
     # Replace this line with:
     # datapath = '/YOUR-PATH-TO-REPO/w2v/tweets.gz'
 
