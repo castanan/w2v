@@ -1,4 +1,4 @@
-# Jorge Castanon, December 2015
+# Jorge Castanon, February 2016
 # Data Scientist @ IBM
 
 # run in terminal with:
@@ -26,7 +26,7 @@ print "Number of words in the models: ", words.shape
 print "=================================================\n"
 
 ## Spark Context
-sc = SparkContext('local','cluster-words') 
+sc = SparkContext('local','visualize-words') 
 # next 3 lines turn some logs off
 logger = sc._jvm.org.apache.log4j
 logger.LogManager.getLogger("org").setLevel( logger.Level.OFF )
@@ -48,18 +48,15 @@ dfFeat.printSchema()
 
 ## PCA to project Feature matrix to 2 dimensions
 from pyspark.ml.feature import PCA
-numComponents = 2
+numComponents = 3
 pca = PCA(k=numComponents, inputCol="features", outputCol="pcaFeatures")
 model = pca.fit(dfFeat)
 dfComp = model.transform(dfFeat).select("pcaFeatures")
 # get the first two components to lists to be plotted
-maxWordsVis = 30
+maxWordsVis = 10
 compX = dfComp.map(lambda vec: vec[0][0]).take(maxWordsVis)
 compY = dfComp.map(lambda vec: vec[0][1]).take(maxWordsVis)
-
-print "\n================================================="
-print "Variance explained with 2 components is: ", 'Need to be computed'
-print "=================================================\n"
+compZ = dfComp.map(lambda vec: vec[0][2]).take(maxWordsVis)
 
 ## finish Spark session
 sc.stop()
@@ -68,19 +65,16 @@ sc.stop()
 fs=20 #fontsize
 w = words[0:maxWordsVis]
 import matplotlib.pyplot as plt
-fig, ax = plt.subplots()
-ax.scatter(compX, compY, color='red')
-
+from mpl_toolkits.mplot3d import Axes3D
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.scatter(compX, compY, compZ, color='red', s=100, marker='o', edgecolors='black')
 for i, txt in enumerate(w):
-	if(i<50):
-		ax.annotate(txt,(compX[i],compY[i]),fontsize=20)
-
-
-ax.set_xlabel('First Principal Component', fontsize=fs)
-ax.set_ylabel('Second Principal Component', fontsize=fs)
-ax.set_title('Visualization of Word2Vec via PCA', fontsize=fs)
+	ax.text(compX[i],compY[i],compZ[i], '%s' % (txt), size=fs-5, zorder=1, color='k')
+ax.set_xlabel('1st. Component', fontsize=fs)
+ax.set_ylabel('2nd. Component', fontsize=fs)
+ax.set_zlabel('3rd. Component', fontsize=fs)
+ax.set_title("Top 10 closest words to 'data' in Twitter", fontsize=fs)
 ax.grid(True)
-fig.tight_layout()
-
 plt.show()
 
