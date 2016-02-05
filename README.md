@@ -8,7 +8,12 @@ I.) Installing Anaconda installs Python, numpy, among other Python packages. If 
 
 II.) Download/Install Apache Spark go here: http://spark.apache.org/downloads.html
 
-NOTE: SKIP installations I.) and II.) if you create an account (FREE!) here: https://datascientistworkbench.com/
+This steps were useful for me to install Spark 1.5.1 on a Mac https://github.com/castanan/w2v/blob/master/Install%20Spark%20On%20Mac.txt
+
+III.) Added a notebook here  https://github.com/castanan/w2v/blob/master/w2v_v1.ipynb 
+ and the good news are that Spark comes with Jupyter + Pyspark integrated. This notebook can be invoked from the shell by typing the command:
+IPYTHON_OPTS="notebook" ./bin/pyspark
+if you are sitting on YOUR-SPARK-HOME.
 
 ## Make sure that your pyspark is working
 
@@ -16,9 +21,13 @@ I.) Go to your spark home directory
 
 cd YOUR-SPARK-HOME/bin
 
-II.) Open a pyspark shell by
+II.) Open a pyspark shell by typing the command
 
 ./pyspark
+
+or Pyspark with Jupyter by typing the command
+
+IPYTHON_OPTS="notebook" ./bin/pyspark
 
 III.) print your spark context by typing sc in the pyspark shell, you should get something like this:
 
@@ -101,7 +110,7 @@ You should get a nice plot like this one:
 
 a. All these scripts run in local mode and need to be change to cluster mode for running them with large data sets of tweets
 
-b. If your w2v matrix is too large, you may want to save it in hdfs 
+b. If your w2v matrix is too large, you may want to save it in hdfs, as well as all the large files (list of words, list of cluster labels,...)
 
 c. A different list of keywords in filter.txt file may be useful for different applications
 
@@ -109,7 +118,5 @@ d. Larger amount of tweets (or text documents) are needed to get an accurate Wor
 
 e. The singular values of the Word2Vec matrix may be useful to choose the number of dimensions for each of the vectors associated with your word terms, #'s (hashtags) and @'s (Twitter handlers) 
 
-## FUTURE WORK:
 
-a. Use the dataframe API to improve efficiency
 
