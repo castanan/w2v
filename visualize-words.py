@@ -74,7 +74,7 @@ for i, txt in enumerate(w):
 ax.set_xlabel('1st. Component', fontsize=fs)
 ax.set_ylabel('2nd. Component', fontsize=fs)
 ax.set_zlabel('3rd. Component', fontsize=fs)
-ax.set_title("Top 10 closest words to 'data' in Twitter", fontsize=fs)
+ax.set_title("Top 10 closest words to 'christmas' in Twitter", fontsize=fs)
 ax.grid(True)
 plt.show()
 
