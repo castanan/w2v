@@ -1,0 +1,73 @@
+Instruction for download and installing Spark on an apple:
+
+
+
+- install JAVA for iOS from here http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+
+
+- set JAVA_HOME to:
+
+export JAVA_HOME=$(/usr/libexec/java_home) 
+
+
+
+- install home brew:
+
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 
+
+
+
+- install scala
+
+brew install scala
+
+
+
+- set SCALA_HOME
+
+export SCALA_HOME=/usr/local/bin/scala
+
+export PATH=$PATH:$SCALA_HOME/bin 
+
+
+
+- Download Spark from https://spark.apache.org/downloads.html  
+
+Choose the “Source Code” option
+
+
+
+- Untar and go to you Spark Home (or latest Spark version):
+
+tar -xvzf spark-1.5.1.tar 
+
+cd spark-1.5.1
+
+
+
+- Install maven (mvn) with brew
+
+brew install maven
+
+
+
+- build spark with mavn
+
+mvn -DskipTests clean package
+
+
+
+- Open a Pyspark shell and print the spark context (sc):
+
+cd spark-1.5.1/bin
+
+./pyspark
+
+>>> sc
+
+<pyspark.context.SparkContext object at 0x1041c24d0>
+
+
+
+Ready to Go!
