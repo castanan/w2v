@@ -24,7 +24,7 @@ dist = np.zeros(Nw) # initialize vector of distances
 i = 0
 for w in Feat: # loop to compute cosine distances between 'word' and the rest of the words 
     den = sqrt(np.dot(w,w))*nwstar  # denominator of cosine distance
-    dist[i] = np.dot(wstar,w)/den   # cosine distance to each word
+    dist[i] = abs( np.dot(wstar,w) )/den   # cosine distance to each word
     i = i + 1
 
 indexes = np.argpartition(dist,-(nwords+1))[-(nwords+1):]
