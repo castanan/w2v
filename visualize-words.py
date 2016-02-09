@@ -54,7 +54,7 @@ pca = PCA(k=numComponents, inputCol="features", outputCol="pcaFeatures")
 model = pca.fit(dfFeat)
 dfComp = model.transform(dfFeat).select("pcaFeatures")
 # get the first two components to lists to be plotted
-maxWordsVis = 10
+maxWordsVis = 25
 compX = dfComp.map(lambda vec: vec[0][0]).take(maxWordsVis)
 compY = dfComp.map(lambda vec: vec[0][1]).take(maxWordsVis)
 compZ = dfComp.map(lambda vec: vec[0][2]).take(maxWordsVis)
@@ -75,7 +75,7 @@ for i, txt in enumerate(w):
 ax.set_xlabel('1st. Component', fontsize=fs)
 ax.set_ylabel('2nd. Component', fontsize=fs)
 ax.set_zlabel('3rd. Component', fontsize=fs)
-title = 'Top',str(maxWordsVis),'closest words to',wordToModel ,'in Twitter'
+title = 'Top',str(maxWordsVis),'closest words to term "',wordToModel ,'" in Twitter'
 ax.set_title(' '.join(title), fontsize=fs)
 ax.grid(True)
 plt.show()
