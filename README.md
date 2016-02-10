@@ -42,7 +42,7 @@ cd /YOUR-PATH-TO-REPO/w2v
 
 ## Get the Data
 
-Get some tweets from chritmas eve 2014 from here: 
+Get some tweets from December 23, 2014 from here: 
 
 https://www.dropbox.com/sh/82rrk8di2nouf0x/AAAIMc6J9rWpu08UBLhLbHXEa?dl=0 
 
