@@ -1,6 +1,6 @@
 # Building a Word2Vec Model with Twitter Data
 
-## Blog: http://www.spark.tc/building-a-word2vec-model-with-twitter-data/
+## Blog: https://ibm.biz/word2vec
 
 ## Pre-reqs: install Python, numpy and Apache Spark 
 
