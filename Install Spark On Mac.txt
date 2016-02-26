@@ -60,7 +60,7 @@ mvn -DskipTests clean package
 
 - Open a Pyspark shell and print the spark context (sc):
 
-cd spark-1.5.1/bin
+cd bin
 
 ./pyspark
 
