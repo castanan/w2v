@@ -1,4 +1,4 @@
-Instruction for download and installing Spark on an apple:
+Instruction for downloading and installing Spark on an apple:
 
 
 
