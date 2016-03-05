@@ -3,10 +3,10 @@
 # Jorge Castanon, October 2015
 # Data Scientist @ IBM
 
-# run in terminal with:
-# ~/Documents/spark-1.5.1/bin/spark-submit tweets-to-w2v.py filter.txt
+# run in terminal with comamnd sitting on YOUR-PATH-TO-REPO:
+# ~/Documents/spark-1.5.1/bin/spark-submit mllib-scripts/tweets-to-w2v.py data/filter.txt
 # Replace this line with:
-# /YOUR-SPARK-HOME/bin/spark-submit tweets-to-w2v.py filter.txt
+# /YOUR-SPARK-HOME/bin/spark-submit mllib-scripts/tweets-to-w2v.py data/filter.txt
 
 # filter.txt contains a list of words of interest and may vary 
 # depending on the application. In this example, filter.txt contain
@@ -57,15 +57,10 @@ def main(filterpath):
     
     ## spark context
     sc = SparkContext('local', 'train-w2v') #change to cluster mode when needed
-    # next 3 lines turn some logs off
-    logger = sc._jvm.org.apache.log4j
-    logger.LogManager.getLogger("org").setLevel( logger.Level.OFF )
-    logger.LogManager.getLogger("akka").setLevel( logger.Level.OFF )
-    
-    datapath = '/Users/jorgecastanon/Documents/github/w2v/tweets.gz'
-    #datapath = '/Users/jorgecastanon/Desktop/bdvs497-data/decahose/decahose_BG20141223093*.gz,/Users/jorgecastanon/Desktop/bdvs497-data/decahose/decahose_BG20141223091*.gz'
+
+    datapath = '/Users/jorgecastanon/Documents/github/w2v/data/tweets.gz'
     # Replace this line with:
-    # datapath = '/YOUR-PATH-TO-REPO/w2v/tweets.gz'
+    # datapath = '/YOUR-PATH-TO-REPO/w2v/data/tweets.gz'
 
     data = sc.textFile(datapath)
     totaltw = data.count()
@@ -120,8 +115,8 @@ def main(filterpath):
         feature_matrix.append(model.transform(word).array)
     
     ## save W2V matrix and the list of words 
-    np.save('myW2Vmatrix.npy',feature_matrix)
-    np.save('myWordList.npy',list_words)
+    np.save('mllib-scripts/myW2Vmatrix.npy',feature_matrix)
+    np.save('mllib-scripts/myWordList.npy',list_words)
 
     sc.stop()
     return

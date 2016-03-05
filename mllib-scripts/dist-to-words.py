@@ -2,7 +2,7 @@
 # Data Scientist @ IBM
 
 # run in terminal with the command
-# $ python dist-to-words.py
+# $ python mllib-scripts/dist-to-words.py
 
 import numpy as np
 from math import sqrt
@@ -11,9 +11,9 @@ word = 'christmas' # word of interest
 nwords = 20        # number of words close to 'word' to print
 
 # Read the Word2Vec model, the list of words and the cluster labels
-Feat = np.load('myW2Vmatrix.npy')  
-words = np.load('myWordList.npy')
-labels = np.load('myClusters.npy')
+Feat = np.load('mllib-scripts/myW2Vmatrix.npy')  
+words = np.load('mllib-scripts/myWordList.npy')
+labels = np.load('mllib-scripts/myClusters.npy')
 
 Nw = words.shape[0]                # total number of words
 ind_star = np.where(word == words) # find index associated to 'word' 
