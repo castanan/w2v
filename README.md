@@ -2,6 +2,9 @@
 
 ## Blog: https://ibm.biz/word2vec
 
+![image of pyspark shell]
+(https://github.com/castanan/w2v/blob/master/images/w2v-ibm-design.png)
+
 ## Pre-reqs: install Python, numpy and Apache Spark 
 
 I.) Installing Anaconda installs Python, numpy, among other Python packages. If interested go here https://www.continuum.io/downloads
