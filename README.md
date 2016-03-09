@@ -51,10 +51,11 @@ https://www.dropbox.com/sh/82rrk8di2nouf0x/AAAIMc6J9rWpu08UBLhLbHXEa?dl=0
 
 Note: there is no need to uncompress the file, just download the tweets.gz file and save it on the repo /YOUR-PATH-TO-REPO/w2v/data/.  
 
-## Now you have 2 options: 
+## There are 2 options to perform the Twitter analysis: 
 
-1) dataframes and Spark ML (suggested, March 2016) ml-scripts/README.md 
-2) rdd's and Spark MLlib (October 2015) mllib-scripts/README.md
+1) (suggested) use dataframes and Spark ML (March 2016). see ml-scripts/README.md 
+
+2) use rdd's and Spark MLlib (October 2015). see mllib-scripts/README.md
 
 
 
