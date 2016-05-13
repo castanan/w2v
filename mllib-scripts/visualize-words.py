@@ -18,10 +18,10 @@ words = np.load('mllib-scripts/myWordList.npy')    # reads list of words
 wordToModel = 'christmas'
 maxWordsVis = 30
 
-#Feat = np.load('mllib-scripts/w2v_may1_may19_june1_june11.npy')
-#words = np.load('mllib-scripts/word_may1_may19_june1_june11.npy')
-#wordToModel = 'data'
-#maxWordsVis = 10
+Feat = np.load('models/w2v_may1_may19_june1_june11.npy')
+words = np.load('models/word_may1_may19_june1_june11.npy')
+wordToModel = 'data'
+maxWordsVis = 10
 
 print "\n================================================="
 print "Size of the Word2Vec matrix is: ", Feat.shape 
