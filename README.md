@@ -1,6 +1,6 @@
-# Building a Word2Vec Model with Twitter Data
+# Spark-based machine learning for capturing word meanings
 
-For an end to end tutorial on how to build models on IBM's [Data Science Experience](http://datascience.ibm.com/), please chech [this repo](https://github.com/IBMDataScience/word2vec).
+In this repo, you will find out how to build Word2Vec models with Twitter data. For an end to end tutorial on how to build models on IBM's [Data Science Experience](http://datascience.ibm.com/), please chech [this repo](https://github.com/IBMDataScience/word2vec).
 
 ## To read my blog, please click [here](http://www.ibmbigdatahub.com/blog/spark-based-machine-learning-capturing-word-meanings).
 
