@@ -2,11 +2,6 @@
 
 In this repo, you will find out how to build Word2Vec models with Twitter data. For an end to end tutorial on how to build models on IBM's [Data Science Experience](http://datascience.ibm.com/), please chech [this repo](https://github.com/IBMDataScience/word2vec).
 
-## To read my blog, please click [here](http://www.ibmbigdatahub.com/blog/spark-based-machine-learning-capturing-word-meanings).
-
-![image of pyspark shell]
-(https://github.com/castanan/w2v/blob/master/images/w2v-ibm-design.png)
-
 ## Pre-reqs: install Python, numpy and Apache Spark 
 
 I.) Installing Anaconda installs Python, numpy, among other Python packages. If interested go here https://www.continuum.io/downloads
